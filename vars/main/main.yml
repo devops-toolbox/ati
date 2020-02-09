@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+ati_repos_create: "{{ _ati_repos_create['all']
+  | union ( _ati_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+ati_repos_download: "{{ _ati_repos_download['all']
+  | union ( _ati_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+ati_templates_copy: "{{ _ati_templates_copy['all']
+  | union ( _ati_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+ati_services_enable: "{{ _ati_services_enable['all']
+  | union ( _ati_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+ati_selinux_enable: "{{ _ati_selinux_enable['all']
+  | union ( _ati_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+ati_packages_remove: "{{ _ati_packages_remove['all']
+  | union ( _ati_packages_remove[my_os]
+  | default([]) ) }}"
+ati_packages_repos: "{{ _ati_packages_repos['all']
+  | union ( _ati_packages_repos[my_os]
+  | default([]) ) }}"
+ati_packages_prereq: "{{ _ati_packages_prereq['all']
+  | union ( _ati_packages_prereq[my_os]
+  | default([]) ) }}"
+ati_packages_install: "{{ _ati_packages_install['all']
+  | union ( _ati_packages_install[my_os]
+  | default([]) ) }}"

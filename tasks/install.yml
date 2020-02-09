@@ -1,0 +1,27 @@
+---
+# Install ati packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ ati_packages_remove }}"
+    state: absent
+  become: true
+  when: ati_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ ati_packages_repos }}"
+    state: "{{ ati_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ ati_packages_prereq }}"
+    state: "{{ ati_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ ati_packages_install }}"
+    state: "{{ ati_packages_state }}"
+  become: true
