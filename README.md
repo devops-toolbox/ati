@@ -8,10 +8,10 @@ ati: Ati
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.ati](https://galaxy.ansible.com/devops-toolbox.ati)
+[https://galaxy.ansible.com/devopstoolbox.ati](https://galaxy.ansible.com/devopstoolbox.ati)
 
 ```bash
-ansible-galaxy install devops-toolbox.ati
+ansible-galaxy install devopstoolbox.ati
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: ati is configured
       import_role:
-        name: devops-toolbox.ati
+        name: devopstoolbox.ati
       vars:
         ati_packages_state: present
         ati_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
